@@ -16,7 +16,7 @@ class ProductTemplate(models.Model):
                     [('default_code', '=', record.default_code), ('id', '!=', record.id)]):
                 raise ValidationError("Internal reference must be unique.")
 
-    int_ref1 = fields.Char(string='INT_REF1')
+    int_ref1 = fields.Char(string='INT_REF1',related='default_code')
     int_ref2 = fields.Char(string='INT_REF2')
     tag = fields.Char(string='TAG')
     cod = fields.Char(string='COD')
