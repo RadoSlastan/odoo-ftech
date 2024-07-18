@@ -90,8 +90,7 @@
                         <field name="prefab" invisible="not prefab"/>
                     </group>
                 </page>
-                <page name="properties_settings" string="Properties Settings">
-
+                <page name="properties_settings" string="Properties Settings" groups="base.group_system">
                     <group>
                         <group string="groupe1">
                             <field name="int_ref1" invisible="int_ref1"/>
