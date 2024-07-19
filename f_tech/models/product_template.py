@@ -97,7 +97,6 @@ class ProductTemplate(models.Model):
     prefab = fields.Char(string='PREFAB')
     mh = fields.Char(string='MH')
     surface = fields.Char(string='SURFACE')
-
     inch_zv = fields.Char(string='INCH_ZV')
     kg_zv = fields.Char(string='KG_ZV')
     inch_mont = fields.Char(string='INCH_MONT')

@@ -100,14 +100,14 @@
 
                             <field name="mh" invisible="not mh"/>
                             <field name="surface" invisible="not surface"/>
-
+                        </group>
+                        <group string="Work Time">
                             <field name="inch_zv" invisible="not inch_zv"/>
                             <field name="kg_zv" invisible="not kg_zv"/>
                             <field name="inch_mont" invisible="not inch_mont"/>
                             <field name="kg_mont" invisible="not kg_mont"/>
                             <field name="mhzv" invisible="not mhzv"/>
                             <field name="mhmont" invisible="not mhmont"/>
-
                         </group>
                     </group>
                 </page>
@@ -196,6 +196,8 @@
                             <field name="prefab"/>
                             <field name="mh"/>
                             <field name="surface"/>
+                        </group>
+                        <group string="Work Time">
                             <field name="inch_zv"/>
                             <field name="kg_zv"/>
                             <field name="inch_mont"/>
@@ -205,6 +207,7 @@
 
 
                         </group>
+
                     </group>
                 </page>
             </xpath>
