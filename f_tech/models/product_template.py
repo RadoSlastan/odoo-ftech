@@ -4,21 +4,17 @@ from odoo.exceptions import ValidationError
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    @api.constrains('name', 'default_code')
+    @api.constrains('name')
     def _check_unique_name_default_code(self):
         for record in self:
             # Check if there's any other product with the same name
             if self.search([('name', '=', record.name), ('id', '!=', record.id)]):
                 raise ValidationError("Product name must be unique.")
 
-            # Check if there's any other product with the same internal reference
-            if record.default_code and self.search(
-                    [('default_code', '=', record.default_code), ('id', '!=', record.id)]):
-                raise ValidationError("Internal reference must be unique.")
-
-    int_ref1 = fields.Char(string='INT_REF1',related='default_code')
+    default_code = fields.Char(
+        'INT_REF1', compute='_compute_default_code',
+        inverse='_set_default_code', store=True)
     int_ref2 = fields.Char(string='INT_REF2')
-    tag = fields.Char(string='TAG')
     cod = fields.Char(string='COD')
     execution = fields.Char(string='EXECUTION')
     stdtype = fields.Char(string='STDTYPE')
