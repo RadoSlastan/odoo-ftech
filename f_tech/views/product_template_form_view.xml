@@ -8,6 +8,7 @@
             <field name="default_code" position="after">
                 <field name="int_ref2"/>
             </field>
+
             <xpath expr="//page[@name='general_information']" position="after">
                 <page name="properties" string="Properties">
                     <group>
@@ -21,12 +22,23 @@
                             <field name="face" invisible="not face"/>
                             <field name="facefinish" invisible="not facefinish"/>
                             <field name="standard2" invisible="not standard2"/>
+
+                            <field name="end" invisible="not end"/>
+                            <field name="end2" invisible="not end2"/>
+                            <field name="end3" invisible="not end3"/>
+
                             <field name="control" invisible="not control"/>
                             <field name="mat_group" invisible="not mat_group"/>
                             <field name="material" invisible="not material"/>
                             <field name="finish" invisible="not finish"/>
                             <field name="material2" invisible="not material2"/>
-                            <field name="finish3" invisible="not finish3"/>
+                            <field name="finish2" invisible="not finish2"/>
+
+
+                            <field name="d1c" invisible="not d1c"/>
+                            <field name="d2c" invisible="not d2c"/>
+                            <field name="dms" invisible="not dms"/>
+
                             <field name="dimension" invisible="not dimension"/>
                             <field name="dimension2" invisible="not dimension2"/>
                         </group>
@@ -85,6 +97,17 @@
                             <field name="f" invisible="not f"/>
                             <field name="g" invisible="not g"/>
                             <field name="prefab" invisible="not prefab"/>
+
+                            <field name="mh" invisible="not mh"/>
+                            <field name="surface" invisible="not surface"/>
+
+                            <field name="inch_zv" invisible="not inch_zv"/>
+                            <field name="kg_zv" invisible="not kg_zv"/>
+                            <field name="inch_mont" invisible="not inch_mont"/>
+                            <field name="kg_mont" invisible="not kg_mont"/>
+                            <field name="mhzv" invisible="not mhzv"/>
+                            <field name="mhmont" invisible="not mhmont"/>
+
                         </group>
                     </group>
                 </page>
@@ -100,12 +123,19 @@
                             <field name="face"/>
                             <field name="facefinish"/>
                             <field name="standard2"/>
+                            <field name="end"/>
+                            <field name="end2"/>
+                            <field name="end3"/>
                             <field name="control"/>
                             <field name="mat_group"/>
                             <field name="material"/>
                             <field name="finish"/>
                             <field name="material2"/>
-                            <field name="finish3"/>
+                            <field name="finish2"/>
+
+                            <field name="d1c"/>
+                            <field name="d2c"/>
+                            <field name="dms"/>
                             <field name="dimension"/>
                             <field name="dimension2"/>
                         </group>
@@ -164,6 +194,16 @@
                             <field name="f"/>
                             <field name="g"/>
                             <field name="prefab"/>
+                            <field name="mh"/>
+                            <field name="surface"/>
+                            <field name="inch_zv"/>
+                            <field name="kg_zv"/>
+                            <field name="inch_mont"/>
+                            <field name="kg_mont"/>
+                            <field name="mhzv"/>
+                            <field name="mhmont"/>
+
+
                         </group>
                     </group>
                 </page>

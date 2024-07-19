@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
+
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
@@ -20,16 +21,24 @@ class ProductTemplate(models.Model):
     stdtype = fields.Char(string='STDTYPE')
     firma = fields.Char(string='FIRMA')
     standard = fields.Char(string='STANDARD')
-    typestd1 = fields.Char(string='TYPE')
+    typestd1 = fields.Char(string='TYPESTD1')
     face = fields.Char(string='FACE')
     facefinish = fields.Char(string='FACEFINISH')
     standard2 = fields.Char(string='STANDARD2')
+    end = fields.Char(string='END')
+    end2 = fields.Char(string='END2')
+    en3 = fields.Char(string='END3')
+
     control = fields.Char(string='CONTROL')
     mat_group = fields.Char(string='MAT_GROUP')
     material = fields.Char(string='MATERIAL')
     finish = fields.Char(string='FINISH')
     material2 = fields.Char(string='MATERIAL2')
-    finish3 = fields.Char(string='FINISH3')
+    finish2 = fields.Char(string='FINISH2')
+    d1c = fields.Char(string='D1C')
+    d2c = fields.Char(string='D2C')
+    dms = fields.Char(string='DMS')
+
     dimension = fields.Char(string='DIMENSION')
     dimension2 = fields.Char(string='DIMENSION2')
     profildim = fields.Char(string='PROFILDIM')
@@ -86,4 +95,12 @@ class ProductTemplate(models.Model):
     f = fields.Char(string='F')
     g = fields.Char(string='G')
     prefab = fields.Char(string='PREFAB')
+    mh = fields.Char(string='MH')
+    surface = fields.Char(string='SURFACE')
 
+    inch_zv = fields.Char(string='INCH_ZV')
+    kg_zv = fields.Char(string='KG_ZV')
+    inch_mont = fields.Char(string='INCH_MONT')
+    kg_mont = fields.Char(string='KG_MONT')
+    mhzv = fields.Char(string='MHZV')
+    mhmont = fields.Char(string='MHMONT')
