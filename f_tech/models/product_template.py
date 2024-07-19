@@ -27,7 +27,7 @@ class ProductTemplate(models.Model):
     standard2 = fields.Char(string='STANDARD2')
     end = fields.Char(string='END')
     end2 = fields.Char(string='END2')
-    en3 = fields.Char(string='END3')
+    end3 = fields.Char(string='END3')
 
     control = fields.Char(string='CONTROL')
     mat_group = fields.Char(string='MAT_GROUP')
