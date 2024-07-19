@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
     <record id="view_product_template_form_inherit" model="ir.ui.view">
         <field name="name">product.template.form.inherit</field>
         <field name="model">product.template</field>
@@ -8,7 +9,9 @@
             <field name="default_code" position="after">
                 <field name="int_ref2"/>
             </field>
-
+            <field name="responsible_id" position="after">
+                <field name="surface"/>
+            </field>
             <xpath expr="//page[@name='general_information']" position="after">
                 <page name="properties" string="Properties">
                     <group>
@@ -99,7 +102,6 @@
                             <field name="prefab" invisible="not prefab"/>
 
                             <field name="mh" invisible="not mh"/>
-                            <field name="surface" invisible="not surface"/>
                         </group>
                         <group string="Work Time">
                             <field name="inch_zv" invisible="not inch_zv"/>
@@ -195,7 +197,7 @@
                             <field name="g"/>
                             <field name="prefab"/>
                             <field name="mh"/>
-                            <field name="surface"/>
+
                         </group>
                         <group string="Work Time">
                             <field name="inch_zv"/>
