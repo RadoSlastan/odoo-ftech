@@ -9,7 +9,7 @@
                 <page name="properties" string="Properties">
                     <group>
                         <field name="default_code" position="after">
-                            <field name="int_ref2" invisible="not int_ref2"/>
+                            <field name="int_ref2"/>
                         </field>
                         <group>
                             <field name="cod" invisible="not cod"/>
