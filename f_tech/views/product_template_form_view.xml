@@ -21,7 +21,7 @@
                             <field name="stdtype" invisible="not stdtype"/>
                             <field name="firma" invisible="not firma"/>
                             <field name="standard" invisible="not standard"/>
-                            <field name="typestd1" invisible="not type"/>
+                            <field name="typestd1" invisible="not typestd1"/>
                             <field name="face" invisible="not face"/>
                             <field name="facefinish" invisible="not facefinish"/>
                             <field name="standard2" invisible="not standard2"/>
