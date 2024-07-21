@@ -16,6 +16,7 @@
         'views/product_template_form_view.xml',
         'views/sale_order_view.xml',
         'views/product_view_kanban_catalog.xml',
+        'views/product_view.xml',
         'wizard/view_sale_order_line_to_purchase_wizard_form.xml',
 
     ],
