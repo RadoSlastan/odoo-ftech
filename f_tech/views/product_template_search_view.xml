@@ -93,7 +93,7 @@
             ('mhzv', 'ilike', self),
             ('mhmont', 'ilike', self)
         ]"/>
-                 <field name="product_tag_ids" string="Tags" widget="many2many_tags" filter_domain="[('product_tag_ids.name', 'in', [self])]"/>
+                 <field name="product_tag_ids" string="Tags" widget="many2many_tags" filter_domain="[('product_tag_ids.name', 'ilike', self)]"/>
             </xpath>
 
         </field>
