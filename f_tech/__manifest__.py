@@ -19,6 +19,7 @@
         'views/product_view.xml',
         'views/product_template_search_view.xml',
         'wizard/view_sale_order_line_to_purchase_wizard_form.xml',
+        'wizard/sale_order_line_import_wizard_view.xml'
 
     ],
     'images': ['static/description/icon.png'],

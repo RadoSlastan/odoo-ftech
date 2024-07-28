@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 accesssale.order.line.to.purchase.wizard,sale.order.line.to.purchase.wizard,model_sale_order_line_to_purchase_wizard,,1,1,1,1
 accesssale.order.line.to.purchase.line.wizard,sale.order.line.to.purchase.wizard.line,model_sale_order_line_to_purchase_wizard_line,,1,1,1,1
+accesssale.order.line.import.wizard,sale.order.line.import.wizard,model_sale_order_line_import_wizard,,1,1,1,1
