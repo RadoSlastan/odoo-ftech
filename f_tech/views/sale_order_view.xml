@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_import_sale_order_lines" model="ir.actions.act_window">
+        <field name="name">Import Sale Order Lines</field>
+        <field name="res_model">sale.order.line.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <record id="view_sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                 <button name="%(action_import_sale_order_lines)d"
+                        string="Import Sale Order Lines"
+                        type="action"
+                        class="btn-primary"/>
+                <button name="action_convert_to_purchase" type="object" string="Convert to Purchase" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

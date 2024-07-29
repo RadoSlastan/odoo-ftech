@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <record id="product_view_tree_catalog" model="ir.ui.view">
+    <field name="name">product.view.tree.catalog</field>
+    <field name="model">product.product</field>
+    <field name="arch" type="xml">
+        <tree default_order="default_code asc">
+            <field name="name"/>
+            <field name="default_code"/>
+            <field name="list_price"/>
+            <field name="categ_id" />
+        </tree>
+    </field>
+</record>
+</odoo>

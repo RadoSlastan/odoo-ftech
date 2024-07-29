@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_product_template_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <field name="default_code" position="after">
+                <field name="int_ref2"/>
+            </field>
+            <field name="responsible_id" position="after">
+                <field name="surface"/>
+            </field>
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page name="properties" string="Properties">
+                    <group>
+                        <group string="Specification">
+                            <field name="cod" invisible="not cod"/>
+                            <field name="execution" invisible="not execution"/>
+                            <field name="stdtype" invisible="not stdtype"/>
+                            <field name="firma" invisible="not firma"/>
+                            <field name="standard" invisible="not standard"/>
+                            <field name="typestd1" invisible="not typestd1"/>
+                            <field name="face" invisible="not face"/>
+                            <field name="facefinish" invisible="not facefinish"/>
+                            <field name="standard2" invisible="not standard2"/>
+
+                            <field name="end" invisible="not end"/>
+                            <field name="end2" invisible="not end2"/>
+                            <field name="end3" invisible="not end3"/>
+
+                            <field name="control" invisible="not control"/>
+                            <field name="mat_group" invisible="not mat_group"/>
+                            <field name="material" invisible="not material"/>
+                            <field name="finish" invisible="not finish"/>
+                            <field name="material2" invisible="not material2"/>
+                            <field name="finish2" invisible="not finish2"/>
+
+
+                            <field name="d1c" invisible="not d1c"/>
+                            <field name="d2c" invisible="not d2c"/>
+                            <field name="dms" invisible="not dms"/>
+
+                            <field name="dimension" invisible="not dimension"/>
+                            <field name="dimension2" invisible="not dimension2"/>
+                        </group>
+                        <group string="Properties">
+                            <field name="profildim" invisible="not profildim"/>
+                            <field name="rt" invisible="not rt"/>
+                            <field name="rl" invisible="not rl"/>
+                            <field name="rlrs" invisible="not rlrs"/>
+                            <field name="scut" invisible="not scut"/>
+                            <field name="dgr" invisible="not dgr"/>
+                            <field name="dn1" invisible="not dn1"/>
+                            <field name="dn2" invisible="not dn2"/>
+                            <field name="dn3" invisible="not dn3"/>
+                            <field name="dn1u" invisible="not dn1u"/>
+                            <field name="dn2u" invisible="not dn2u"/>
+                            <field name="dn3u" invisible="not dn3u"/>
+                            <field name="pn1" invisible="not pn1"/>
+                            <field name="pn2" invisible="not pn2"/>
+                            <field name="pn1u" invisible="not pn1u"/>
+                            <field name="pn2u" invisible="not pn2u"/>
+                            <field name="sch1" invisible="not sch1"/>
+                            <field name="sch2" invisible="not sch2"/>
+                            <field name="sdr" invisible="not sdr"/>
+                            <field name="od1" invisible="not od1"/>
+                            <field name="od2" invisible="not od2"/>
+                            <field name="od3" invisible="not od3"/>
+                            <field name="wt1" invisible="not wt1"/>
+                            <field name="wt2" invisible="not wt2"/>
+                            <field name="wt3" invisible="not wt3"/>
+                            <field name="diaext" invisible="not diaext"/>
+                            <field name="diaext2" invisible="not diaext2"/>
+                            <field name="diaint" invisible="not diaint"/>
+                            <field name="diaint2" invisible="not diaint2"/>
+                            <field name="diac" invisible="not diac"/>
+                            <field name="bore" invisible="not bore"/>
+                            <field name="diabolt" invisible="not diabolt"/>
+                            <field name="boltl" invisible="not boltl"/>
+                            <field name="studl" invisible="not studl"/>
+                            <field name="boltno" invisible="not boltno"/>
+                            <field name="threadt" invisible="not threadt"/>
+                            <field name="thread" invisible="not thread"/>
+                            <field name="th1" invisible="not th1"/>
+                            <field name="th2" invisible="not th2"/>
+                            <field name="len1" invisible="not len1"/>
+                            <field name="len1rs" invisible="not len1rs"/>
+                            <field name="len2" invisible="not len2"/>
+                            <field name="wid1" invisible="not wid1"/>
+                            <field name="wid2" invisible="not wid2"/>
+                            <field name="hig1" invisible="not hig1"/>
+                            <field name="hig2" invisible="not hig2"/>
+                            <field name="a" invisible="not a"/>
+                            <field name="b" invisible="not b"/>
+                            <field name="c" invisible="not c"/>
+                            <field name="d" invisible="not d"/>
+                            <field name="e" invisible="not e"/>
+                            <field name="f" invisible="not f"/>
+                            <field name="g" invisible="not g"/>
+                            <field name="prefab" invisible="not prefab"/>
+
+                            <field name="mh" invisible="not mh"/>
+                        </group>
+                        <group string="Work Time">
+                            <field name="inch_zv" invisible="not inch_zv"/>
+                            <field name="kg_zv" invisible="not kg_zv"/>
+                            <field name="inch_mont" invisible="not inch_mont"/>
+                            <field name="kg_mont" invisible="not kg_mont"/>
+                            <field name="mhzv" invisible="not mhzv"/>
+                            <field name="mhmont" invisible="not mhmont"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="properties_settings" string="Properties Settings" groups="base.group_system">
+                    <group>
+                        <group string="Specification">
+                            <field name="cod"/>
+                            <field name="execution"/>
+                            <field name="stdtype"/>
+                            <field name="firma"/>
+                            <field name="standard"/>
+                            <field name="typestd1"/>
+                            <field name="face"/>
+                            <field name="facefinish"/>
+                            <field name="standard2"/>
+                            <field name="end"/>
+                            <field name="end2"/>
+                            <field name="end3"/>
+                            <field name="control"/>
+                            <field name="mat_group"/>
+                            <field name="material"/>
+                            <field name="finish"/>
+                            <field name="material2"/>
+                            <field name="finish2"/>
+
+                            <field name="d1c"/>
+                            <field name="d2c"/>
+                            <field name="dms"/>
+                            <field name="dimension"/>
+                            <field name="dimension2"/>
+                        </group>
+                        <group string="Properties">
+                            <field name="profildim"/>
+                            <field name="rt"/>
+                            <field name="rl"/>
+                            <field name="rlrs"/>
+                            <field name="scut"/>
+                            <field name="dgr"/>
+                            <field name="dn1"/>
+                            <field name="dn2"/>
+                            <field name="dn3"/>
+                            <field name="dn1u"/>
+                            <field name="dn2u"/>
+                            <field name="dn3u"/>
+                            <field name="pn1"/>
+                            <field name="pn2"/>
+                            <field name="pn1u"/>
+                            <field name="pn2u"/>
+                            <field name="sch1"/>
+                            <field name="sch2"/>
+                            <field name="sdr"/>
+                            <field name="od1"/>
+                            <field name="od2"/>
+                            <field name="od3"/>
+                            <field name="wt1"/>
+                            <field name="wt2"/>
+                            <field name="wt3"/>
+                            <field name="diaext"/>
+                            <field name="diaext2"/>
+                            <field name="diaint"/>
+                            <field name="diaint2"/>
+                            <field name="diac"/>
+                            <field name="bore"/>
+                            <field name="diabolt"/>
+                            <field name="boltl"/>
+                            <field name="studl"/>
+                            <field name="boltno"/>
+                            <field name="threadt"/>
+                            <field name="thread"/>
+                            <field name="th1"/>
+                            <field name="th2"/>
+                            <field name="len1"/>
+                            <field name="len1rs"/>
+                            <field name="len2"/>
+                            <field name="wid1"/>
+                            <field name="wid2"/>
+                            <field name="hig1"/>
+                            <field name="hig2"/>
+                            <field name="a"/>
+                            <field name="b"/>
+                            <field name="c"/>
+                            <field name="d"/>
+                            <field name="e"/>
+                            <field name="f"/>
+                            <field name="g"/>
+                            <field name="prefab"/>
+                            <field name="mh"/>
+
+                        </group>
+                        <group string="Work Time">
+                            <field name="inch_zv"/>
+                            <field name="kg_zv"/>
+                            <field name="inch_mont"/>
+                            <field name="kg_mont"/>
+                            <field name="mhzv"/>
+                            <field name="mhmont"/>
+
+
+                        </group>
+
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
