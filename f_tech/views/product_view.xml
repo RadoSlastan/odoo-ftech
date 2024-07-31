@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
- <record id="product_view_tree_catalog" model="ir.ui.view">
-    <field name="name">product.view.tree.catalog</field>
-    <field name="model">product.product</field>
-    <field name="arch" type="xml">
-        <tree default_order="default_code asc">
-            <field name="name"/>
-            <field name="default_code"/>
-            <field name="list_price"/>
-            <field name="categ_id" />
-        </tree>
-    </field>
-</record>
+    <record id="product_view_tree_catalog" model="ir.ui.view">
+        <field name="name">product.view.tree.catalog</field>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree string="Products" editable="bottom" default_order="default_code asc">
+                <header>
+                    <button name="action_add_to_sale_order" type="object" string="Add" class="oe_highlight"
+                            icon="fa-shopping-cart" />
+                    <button name="action_remove_from_sale_order" type="object" string="Remove" class="oe_highlight"
+                             icon="fa-trash"/>
+
+                </header>
+                <field name="name"/>
+                <field name="default_code"/>
+                <field name="list_price"/>
+                <field name="categ_id"/>
+                <button name="action_add_qty" type="object" string="PLUS" icon="fa-plus" class="oe_highlight"/>
+                <button name="action_sub_qty" type="object" string="MINUS" icon="fa-minus" class="oe_highlight"/>
+
+            </tree>
+        </field>
+    </record>
 </odoo>
+

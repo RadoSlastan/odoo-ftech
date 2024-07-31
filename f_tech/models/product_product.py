@@ -3,6 +3,41 @@ from odoo.tools.misc import unique
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
+
+
+    def action_add_to_sale_order(self):
+        order_id = dict(self.env.context or {}).get('order_id')
+        sale_order = self.env['sale.order'].browse(order_id)
+        if not sale_order:
+            return
+        product_ids = self.env.context.get('active_ids', [])
+        print(product_ids)
+        for product_id in product_ids:
+            product = self.env['product.product'].browse(product_id)
+            sale_order.order_line.create({
+                'order_id': sale_order.id,
+                'product_id': product.id,
+                'name': product.name,
+                'product_uom_qty': 1,  # default to 1 quantity, you can customize this
+                'price_unit': product.lst_price,
+            })
+        return True
+
+    def action_remove_from_sale_order(self):
+        order_id = dict(self.env.context or {}).get('order_id')
+        product_ids = self.env.context.get('active_ids', [])
+        sale_order = self.env['sale.order'].browse(order_id)
+
+        for product_id in product_ids:
+            order_line = sale_order.order_line.filtered(lambda line: line.product_id.id == product_id)
+            if order_line:
+                order_line.unlink()
+        return True
+
+    def action_add_qty(self):
+        pass
+    def action_sub_qty(self):
+        pass
     @api.depends('name', 'default_code', 'product_tmpl_id')
     @api.depends_context('display_default_code', 'seller_id', 'company_id', 'partner_id')
     def _compute_display_name(self):
