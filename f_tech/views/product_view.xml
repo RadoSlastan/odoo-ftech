@@ -8,16 +8,20 @@
                 <header>
                     <button name="action_add_to_sale_order" type="object" string="Add" class="oe_highlight"
                             icon="fa-shopping-cart" />
-                    <button name="action_remove_from_sale_order" type="object" string="Remove" class="oe_highlight"
-                             icon="fa-trash"/>
 
                 </header>
                 <field name="name"/>
                 <field name="default_code"/>
                 <field name="list_price"/>
                 <field name="categ_id"/>
-                <button name="action_add_qty" type="object" string="PLUS" icon="fa-plus" class="oe_highlight"/>
-                <button name="action_sub_qty" type="object" string="MINUS" icon="fa-minus" class="oe_highlight"/>
+
+                <field name="is_in_sale_order" invisible="1"/>
+                <button name="action_add_qty" type="object" string="PLUS" icon="fa-plus" class="oe_highlight" invisible=" not is_in_sale_order"/>
+                <field name="product_so_qty" invisible=" not is_in_sale_order"/>
+                <button name="action_sub_qty" type="object" string="MINUS" icon="fa-minus" class="oe_highlight" invisible=" not is_in_sale_order"/>
+                <button name="action_remove_from_sale_order" type="object" string="Remove"
+                        icon="fa-trash" class="oe_highlight" invisible=" not is_in_sale_order"/>
+
 
             </tree>
         </field>
