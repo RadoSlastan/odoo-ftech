@@ -6,7 +6,8 @@ class ProductProduct(models.Model):
     _inherit = 'product.product'
 
     order_id = fields.Many2one('sale.order', string='Sale Order', compute='_compute_order_id', store=False)
-    product_so_qty = fields.Integer('Quantity', compute='_compute_product_so_qty', store=False)
+    product_so_qty = fields.Integer('QTY', compute='_compute_product_so_qty', store=False)
+
     @api.depends('order_id')
     def _compute_product_so_qty(self):
         for product in self:
@@ -16,6 +17,7 @@ class ProductProduct(models.Model):
                 product.product_so_qty = sum(line.product_uom_qty for line in order_lines)
             else:
                 product.product_so_qty = 0
+
     @api.depends()
     def _compute_order_id(self):
         for product in self:
@@ -33,7 +35,7 @@ class ProductProduct(models.Model):
         for product in self:
             product.is_in_sale_order = any(line.product_id == product for line in product.order_id.order_line)
 
-    def action_add_to_sale_order(self):
+    def action_add_products_to_sale_order(self):
         if not self.order_id:
             return
         product_ids = self.env.context.get('active_ids', [])
@@ -47,21 +49,50 @@ class ProductProduct(models.Model):
                 'product_uom_qty': 1,
                 'price_unit': product.lst_price,
             })
+            product.is_in_sale_order = True
         return True
 
-    def action_remove_from_sale_order(self):
+    def action_add_product_to_sale_order(self):
+        if not self.order_id:
+            return
+
+        product = self.env['product.product'].browse(self.id)
+        self.order_id.order_line.create({
+            'order_id': self.order_id.id,
+            'product_id': product.id,
+            'name': product.name,
+            'product_uom_qty': 1,
+            'price_unit': product.lst_price,
+        })
+        self.is_in_sale_order = True
+        return True
+
+    def action_remove_product_from_sale_order(self):
+        order_line = self.order_id.order_line.filtered(lambda line: line.product_id.id == self.id)
+        if order_line:
+            order_line.unlink()
+            self.is_in_sale_order = False
+
+    def action_remove_products_from_sale_order(self):
+
         product_ids = self.env.context.get('active_ids', [])
+        self.is_in_sale_order = False
         for product_id in product_ids:
             order_line = self.order_id.order_line.filtered(lambda line: line.product_id.id == product_id)
             if order_line:
                 order_line.unlink()
+
         return True
 
     def action_add_qty(self):
-        pass
+        order_line = self.order_id.order_line.filtered(lambda line: line.product_id.id == self.id)
+        if order_line:
+            order_line.product_uom_qty += 1
 
     def action_sub_qty(self):
-        pass
+        order_line = self.order_id.order_line.filtered(lambda line: line.product_id.id == self.id)
+        if order_line:
+            order_line.product_uom_qty -= 1
 
     @api.depends('name', 'default_code', 'product_tmpl_id')
     @api.depends_context('display_default_code', 'seller_id', 'company_id', 'partner_id')
