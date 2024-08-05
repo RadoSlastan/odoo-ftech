@@ -6,7 +6,7 @@ class ProductProduct(models.Model):
     _inherit = 'product.product'
 
     order_id = fields.Many2one('sale.order', string='Sale Order', compute='_compute_order_id', store=False)
-    product_so_qty = fields.Integer('QTY', compute='_compute_product_so_qty', store=False)
+    product_so_qty = fields.Integer('QTY', compute='_compute_product_so_qty', inverse='_inverse_product_so_qty', store=False)
 
     @api.depends('order_id')
     def _compute_product_so_qty(self):
@@ -18,6 +18,11 @@ class ProductProduct(models.Model):
             else:
                 product.product_so_qty = 0
 
+    def _inverse_product_so_qty(self):
+        for product in self:
+            order_line = product.order_id.order_line.filtered(lambda line: line.product_id.id == product.id)
+            if order_line:
+                order_line.product_uom_qty = product.product_so_qty
     @api.depends()
     def _compute_order_id(self):
         for product in self:
