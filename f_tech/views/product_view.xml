@@ -13,6 +13,7 @@
                 </header>
                 <field name="name"/>
                 <field name="default_code"/>
+                <field name="int_ref2"/>
                 <field name="list_price"/>
                 <field name="categ_id"/>
                 <field name="is_in_sale_order" invisible="1"/>
