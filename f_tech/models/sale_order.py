@@ -1,7 +1,10 @@
-from odoo import models
+from odoo import fields, models
+
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
+
+    attachment_ids = fields.Many2many('ir.attachment', string="Attachments")
 
     def action_convert_to_purchase(self):
         return {

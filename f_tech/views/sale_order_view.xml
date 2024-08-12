@@ -12,12 +12,19 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
-                 <button name="%(action_import_sale_order_lines)d"
+                <button name="%(action_import_sale_order_lines)d"
                         string="Import Sale Order Lines"
                         type="action"
                         class="btn-primary"/>
-                <button name="action_convert_to_purchase" type="object" string="Convert to Purchase" class="oe_highlight"/>
+                <button name="action_convert_to_purchase" type="object" string="Convert to Purchase"
+                        class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Attachment">
+                    <field name="attachment_ids"/>
+                </page>
             </xpath>
         </field>
     </record>
+
 </odoo>

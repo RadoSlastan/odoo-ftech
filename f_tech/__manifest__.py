@@ -15,6 +15,7 @@
         'security/ir.model.access.csv',
         'views/product_template_form_view.xml',
         'views/sale_order_view.xml',
+        'views/purchase_order_view.xml',
         'views/product_view_kanban_catalog.xml',
         'views/product_view.xml',
         'views/product_template_search_view.xml',
