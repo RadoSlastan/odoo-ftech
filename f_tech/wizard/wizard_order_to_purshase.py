@@ -17,7 +17,7 @@ class SaleOrderLineToPurchaseWizard(models.TransientModel):
             lines.append((0, 0, {
                 'sale_order_line_id': line.id,
                 'product_id': line.product_id.id,
-                'name': line.name,
+                'default_code': line.product_id.default_code,
                 'product_uom_qty': line.product_uom_qty,
                 'unit_price': line.price_unit,
             }))
@@ -34,7 +34,7 @@ class SaleOrderLineToPurchaseWizard(models.TransientModel):
                 'partner_id': wizard.partner_id.id,
                 'order_line': [(0, 0, {
                     'product_id': line.product_id.id,
-                    'name': line.name,
+                    # 'name': line.name,
                     'product_qty': line.product_uom_qty,
                     'product_uom': line.product_id.uom_po_id.id,
                     'price_unit': line.unit_price,
@@ -59,6 +59,7 @@ class SaleOrderLineToPurchaseWizardLine(models.TransientModel):
     sale_order_line_id = fields.Many2one('sale.order.line', string="Sale Order Line")
     product_id = fields.Many2one('product.product', string="Product")
     name = fields.Char(string="Description")
+    default_code =fields.Char(string="INT_1")
     product_uom_qty = fields.Float(string="Quantity")
     unit_price = fields.Float(string="Unit Price")
     selected = fields.Boolean(string="Select")
